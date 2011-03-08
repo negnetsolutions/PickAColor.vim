@@ -198,7 +198,7 @@ function! PickAColor(default_color) " {{{
           \ '-e "end tell"',
           \ '-e "return theColor"']
 
-    return split(system("osascript " . join(s:ascrpt, ' ') . " 2>/dev/null"), ',')
+    return split(system("arch -i386 osascript " . join(s:ascrpt, ' ') . " 2>/dev/null"), ',')
   endif " }}}
 
   let default_color = printf('#%02x%02x%02x', a:default_color[0], a:default_color[1], a:default_color[2])
